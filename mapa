@@ -1,0 +1,58 @@
+package mapa;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Super Maquina
+ */
+public class Mapa {
+
+    public static String vida(){
+           
+        Scanner tec= new Scanner (System.in);
+        int x=0, y=0;
+        List comando= new ArrayList();
+            
+       for(int acoes=0;acoes<5;){
+            System.out.println("map de locomoção imaginario.\n "
+                        + "escolha a locomoção que desejar. Vc começa em x:0 e y:0. Movimentos:\n"
+                        + " 1='c' para cima\n 2='b' para baixo\n 3='d' para direita\n 4='e' para esquerda\n 5= para parar de mover"+ "\n");
+        acoes=tec.nextInt();
+        switch(acoes){
+            case 1:
+                y=y+1;
+                comando.add("c");
+            break;
+            case 2:
+                y=y-1;
+                comando.add("b");
+            break;
+            case 3:
+                x=x+1;
+                comando.add("d");
+            break;
+            case 4:
+                x=x-1;
+                comando.add("e");
+            break;
+            default:
+                System.out.println("saindo...");
+        }
+                
+        
+        }
+        String resp= "voce se locomoveu pelo mapa com os comandos:"+comando
+                + "e o resultado foi x:"+x+",y"+y;
+        
+    return resp;        
+    }
+    
+    
+    public static void main(String[] args) {
+        System.out.println(vida());
+        
+    }
+}
